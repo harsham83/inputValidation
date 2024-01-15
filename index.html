@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="./index.css">
+</head>
+<body>
+<form id="registrationForm">
+    <h1 class="mainHeading">Marmeto</h1>
+    <p>Please fill the below details to regester as a user</p>
+    <label for="username">1. Username:</label>
+    <input type="text" id="username" name="username" pattern="[a-zA-Z0-9]{5,15}" required>
+    <span class="error-message" style="display: none;">Alphanumeric, 5-15 characters</span>
+
+    <label for="email">2. Email:</label>
+    <input type="email" id="email" name="email" required>
+    <span class="error-message" style="display: none;">Enter a valid email address</span>
+
+    <label for="password">3. Password:</label>
+    <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}" required>
+    <span class="error-message" style="display: none;">At least 8 characters, mix of uppercase, lowercase, numbers, and special characters</span>
+
+    <label for="confirmPassword">4. Confirm Password:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" required>
+    <span class="error-message" style="display: none;">Passwords must match</span>
+
+    <label for="dob">5. Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required>
+    <span class="error-message" style="display: none;">Users must be at least 18 years old</span>
+
+    <label class="gender-options">6. Gender:</label>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label class="gender-label" for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female" required>
+    <label class="gender-label"  for="female">Female</label>
+    <input type="radio" id="other" name="gender" value="other" required>
+    <label class="gender-label"  for="other">Other</label>
+    <div id="genderError" class="error-message" style="display: none;">Please select a gender</div>
+
+    <label for="country">7. Country:</label>
+    <select id="country" name="country" required>
+        <option value="" disabled selected>Select Country</option>
+        <option value="uk">India</option>
+        <option value="us">United States</option>
+        <option value="ca">Canada</option>
+        <option value="uk">United Kingdom</option>
+    </select>
+    <span class="error-message" style="display: none;">Please select a country</span>
+
+    <label>8. Terms and Conditions:</label>
+    <div class="checkbox-label">
+        <input onchange="termsAndConditions()" class="checkbox-custom " type="checkbox" id="terms" name="terms" required>
+        <label for="terms">I accept the Terms and Conditions</label>
+    </div>
+    <button type="button" onclick="submitForm()" disabled>Submit</button>
+    <div class="success-message" id="successMessage" style="display: none;">Form submitted successfully!</div>
+</form>
+<script src="./index.js"></script>
+</body>
+</html>

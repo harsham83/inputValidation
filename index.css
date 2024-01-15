@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 50vw;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50vw;
+    max-width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input[type="radio"] {
+    margin: 4px;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.success-message {
+    color: green;
+    font-size: 14px;
+    margin-top: 8px;
+}
+input[type="radio"] {
+    display: none; /* Hide the default radio buttons */
+}
+
+/* Custom radio button styling */
+.gender-options {
+    display: flex;
+    gap: 10px;
+}
+
+.gender-label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.gender-label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+}
+
+input[type="radio"]:checked + .gender-label::before {
+    background-color: #4caf50; /* Custom color for checked radio button */
+    border-color: #4caf50;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    
+}
+
+.checkbox-input {
+    display: none; 
+}
+
+.checkbox-custom {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.checkbox-custom::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    transform-origin: bottom right;
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.checkbox-input:checked + .checkbox-custom::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+    opacity: 1;
+}
+
+.mainHeading{
+    text-align: center;
+}
